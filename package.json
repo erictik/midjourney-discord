@@ -1,11 +1,14 @@
 {
-  "name": "midjourney-wrapper",
+  "name": "midjourney-discord",
   "version": "1.0.0",
   "description": "node.js client for MidJourney wrapper in Discord.",
-  "main": "index.js",
+  "main": "libs/index.js",
+  "types": "libs/index.d.ts",
+  "source": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/bot.ts"
+    "dev": "nodemon cmd/bot.ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
