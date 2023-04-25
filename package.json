@@ -1,0 +1,35 @@
+{
+  "name": "midjourney-wrapper",
+  "version": "1.0.0",
+  "description": "node.js client for MidJourney wrapper in Discord.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/bot.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erictik/Midjourney-Wrapper.git"
+  },
+  "keywords": [
+    "midjourney",
+    "wrapper",
+    "discord"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erictik/Midjourney-Wrapper/issues"
+  },
+  "homepage": "https://github.com/erictik/Midjourney-Wrapper#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3",
+    "midjourney": "^1.0.8"
+  }
+}
