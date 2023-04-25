@@ -10,6 +10,10 @@
     "dev": "nodemon cmd/bot.ts",
     "build": "tsc"
   },
+  "files": [
+    "libs/*",
+    "*.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/erictik/Midjourney-Wrapper.git"
@@ -19,7 +23,7 @@
     "wrapper",
     "discord"
   ],
-  "author": "",
+  "author": "Eric Yang <yanghao@10d.xin>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/erictik/Midjourney-Wrapper/issues"
@@ -28,11 +32,11 @@
   "devDependencies": {
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
+    "dotenv": "^16.0.3",
     "typescript": "^5.0.4"
   },
   "dependencies": {
     "discord.js": "^14.9.0",
-    "dotenv": "^16.0.3",
     "midjourney": "^1.0.8"
   }
 }
