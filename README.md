@@ -10,6 +10,7 @@ node.js client for MidJourney wrapper in Discord.
 
 
 ## Implemented commands documentation
+[Join discord experience](https://discord.gg/dP95gZ8z)
 Generating idea
 ```
 /oh_imagine [ MT : prompt (string)]
