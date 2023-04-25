@@ -8,12 +8,13 @@ Generating idea
 ```
 /oh_imagine [ MT : prompt (string)]
 ```
+![prompt_pwz2u1](https://res.cloudinary.com/dfswecori/image/upload/v1682423171/eric/prompt_pwz2u1.gif)
 Upscaling   
 Reply `u1` `u2` `u3` `u4` 
-
+![upscale](https://res.cloudinary.com/dfswecori/image/upload/v1682423366/eric/upscale_n5b4go.gif)
 Variations  
 Reply  `v1` `v2` `v3` `v4`
-
+![variation](https://res.cloudinary.com/dfswecori/image/upload/v1682423164/eric/variation_hkpsx0.gif)
 ## Example
 To run the included example, you must have [Node.js](https://nodejs.org/en) installed. Then, run the following commands in the root directory of this project:
 
