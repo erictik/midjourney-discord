@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/erictik/Midjourney-Wrapper.git"
+    "url": "git+https://github.com/erictik/midjourney-discord.git"
   },
   "keywords": [
     "midjourney",
@@ -26,9 +26,9 @@
   "author": "Eric Yang <yanghao@10d.xin>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/erictik/Midjourney-Wrapper/issues"
+    "url": "https://github.com/erictik/midjourney-discord/issues"
   },
-  "homepage": "https://github.com/erictik/Midjourney-Wrapper#readme",
+  "homepage": "https://github.com/erictik/midjourney-discord#readme",
   "devDependencies": {
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
