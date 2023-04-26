@@ -68,7 +68,7 @@ export class MidjourneyBot extends Midjourney {
     async upscale(index: number, messageID: string) {
         const msg = await this.getMessage(this.CHANNEL_ID, messageID)
         if (!msg) return;
-        console.log(msg?.attachments.first()?.url)
+        this.log(msg?.attachments.first()?.url)
         const messageHash = this.UriToHash(<string>msg.attachments.first()?.url)
         const httpStatus = await this.UpscaleApi(index, messageID, messageHash)
         if (httpStatus !== 204) {
@@ -81,7 +81,7 @@ export class MidjourneyBot extends Midjourney {
     async variation(index: number, messageID: string) {
         const msg = await this.getMessage(this.CHANNEL_ID, messageID)
         if (!msg) return;
-        console.log(msg?.attachments.first()?.url)
+        this.log(msg?.attachments.first()?.url)
         const messageHash = this.UriToHash(<string>msg.attachments.first()?.url)
         const httpStatus = await this.VariationApi(index, messageID, messageHash)
         if (httpStatus !== 204) {
