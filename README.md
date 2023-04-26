@@ -1,6 +1,6 @@
-# Midjourney-Wrapper
+# midjourney-discord
 
-node.js client for MidJourney wrapper in Discord.
+node.js client for Midjourney wrapper in Discord.
 <div align="center">
 	<p>
 		<a href="https://discord.gg/dP95gZ8z"><img src="https://img.shields.io/discord/1082500871478329374?color=5865F2&logo=discord&logoColor=white" alt="Discord server" /></a>
