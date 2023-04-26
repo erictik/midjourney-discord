@@ -30,13 +30,13 @@
   },
   "homepage": "https://github.com/erictik/midjourney-discord#readme",
   "devDependencies": {
+    "dotenv": "^16.0.3",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
-    "dotenv": "^16.0.3",
     "typescript": "^5.0.4"
   },
   "dependencies": {
     "discord.js": "^14.9.0",
-    "midjourney": "^1.0.8"
+    "midjourney": "^1.0.10"
   }
 }
