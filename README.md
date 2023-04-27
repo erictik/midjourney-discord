@@ -17,12 +17,16 @@ Generating idea
 /oh_imagine [ MT : prompt (string)]
 ```
 ![prompt_pwz2u1](image/prompt.gif)
+
 Upscaling   
 Reply `u1` `u2` `u3` `u4` 
+
 ![upscale](image/upscale.gif)
+
 Variations  
 Reply  `v1` `v2` `v3` `v4`
 ![variation](image/variation.gif)
+
 ## Example
 To run the included example, you must have [Node.js](https://nodejs.org/en) installed. Then, run the following commands in the root directory of this project:
 
