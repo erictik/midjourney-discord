@@ -8,6 +8,7 @@ node.js client for Midjourney wrapper in Discord.
 	</p>
 </div>
 
+[web ui example](https://github.com/erictik/midjourney-ui/)
 
 ## Implemented commands documentation
 [Join discord experience](https://discord.gg/dP95gZ8z)
