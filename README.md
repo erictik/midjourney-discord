@@ -63,6 +63,14 @@ npm install midjourney-discord
 ```
 
 ## Usage
+### Docker
+```bash
+docker run -d  --env-file .env erictik/midjourney-discord-wrapper
+```
+
+
+
+### NodeJS
 ```js
 import { MidjourneyBot } from 'midjourney-discord'
 const client = new MidjourneyBot( process.env.DAVINCI_TOKEN, process.env.SALAI_TOKEN, process.env.SERVER_ID, process.env.CHANNEL_ID)
