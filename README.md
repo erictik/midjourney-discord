@@ -5,8 +5,8 @@ node.js client for Midjourney wrapper in Discord.
 	<p>
 		<a href="https://discord.gg/GavuGHQbV4"><img src="https://img.shields.io/discord/1082500871478329374?color=5865F2&logo=discord&logoColor=white" alt="Discord server" /></a>
 		<a href="https://www.npmjs.com/package/midjourney-discord"><img src="https://img.shields.io/npm/v/midjourney-discord.svg?maxAge=3600" alt="npm version" /></a>
-		<a href="https://hub.docker.com/r/erictik/midjourney-discord-wrapper/tags">
-		    <img src="https://img.shields.io/docker/v/erictik/midjourney-discord-wrapper?color=5865F2&logo=docker&logoColor=white" alt="Docker" />
+		<a href="https://hub.docker.com/r/erictik/midjourney-discord/tags">
+		    <img src="https://img.shields.io/docker/v/erictik/midjourney-discord?color=5865F2&logo=docker&logoColor=white" alt="Docker" />
 		</a>
 	</p>
 </div>
@@ -42,8 +42,8 @@ git clone
 ```
 npm install
 ```
-3. set the environment variables
-   [How to get your Discord SALAI_TOKEN:](https://www.androidauthority.com/get-discord-token-3149920/)
+3. set the environment variables  
+   [How to get your Discord SALAI_TOKEN:](https://www.androidauthority.com/get-discord-token-3149920/)  
    [How to create a Discord bot and add it to your server:](https://www.xda-developers.com/how-to-create-discord-bot/)
 ```
 export SERVER_ID="108250087147832934"
@@ -68,7 +68,7 @@ npm install midjourney-discord
 ## Usage
 ### Docker
 ```bash
-docker run -d  --env-file .env erictik/midjourney-discord-wrapper
+docker run -d  --env-file .env erictik/midjourney-discord
 ```
 
 
@@ -76,10 +76,11 @@ docker run -d  --env-file .env erictik/midjourney-discord-wrapper
 ### NodeJS
 ```js
 import { MidjourneyBot } from 'midjourney-discord'
-const client = new MidjourneyBot( process.env.DAVINCI_TOKEN, process.env.SALAI_TOKEN, process.env.SERVER_ID, process.env.CHANNEL_ID)
+const client = new Midjourney({
+    ServerId: <string>process.env.SERVER_ID,
+    ChannelId: <string>process.env.CHANNEL_ID,
+    SalaiToken: <string>process.env.SALAI_TOKEN,
+    Debug: true,
+  })
 await client.start()
 ```
-
-
-
-Inspired by [MidJourney-Wrapper](https://github.com/Wildric-Auric/MidJourney-Wrapper)

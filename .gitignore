@@ -130,4 +130,4 @@ dist
 .pnp.*
 
 # ts build generated files
-.libs
+libs
