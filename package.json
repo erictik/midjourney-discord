@@ -37,6 +37,6 @@
   },
   "dependencies": {
     "discord.js": "^14.9.0",
-    "midjourney": "^1.0.10"
+    "midjourney": "^2.1.30"
   }
 }
