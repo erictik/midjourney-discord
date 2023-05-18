@@ -4,7 +4,6 @@ node.js client for Midjourney wrapper in Discord.
 <div align="center">
 	<p>
 		<a href="https://discord.gg/GavuGHQbV4"><img src="https://img.shields.io/discord/1082500871478329374?color=5865F2&logo=discord&logoColor=white" alt="Discord server" /></a>
-		<a href="https://www.npmjs.com/package/midjourney-discord"><img src="https://img.shields.io/npm/v/midjourney-discord.svg?maxAge=3600" alt="npm version" /></a>
 		<a href="https://hub.docker.com/r/erictik/midjourney-discord/tags">
 		    <img src="https://img.shields.io/docker/v/erictik/midjourney-discord?color=5865F2&logo=docker&logoColor=white" alt="Docker" />
 		</a>
