@@ -34,10 +34,14 @@
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
+    "tsx": "^3.12.7",
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@types/node-fetch": "^2.6.4",
     "discord.js": "^14.9.0",
-    "midjourney": "^2.7.78"
+    "midjourney": "^2.7.79",
+    "node-fetch": "2.6.11",
+    "socks-proxy-agent": "^8.0.1"
   }
 }
