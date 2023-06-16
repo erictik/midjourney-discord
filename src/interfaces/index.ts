@@ -1,17 +1,13 @@
-import {
-  DefaultMidjourneyConfig,
-  MidjourneyConfig,
-  MidjourneyConfigParam,
-} from "midjourney";
+import { DefaultMJConfig, MJConfig, MJConfigParam } from "midjourney";
 
-export interface BotConfig extends MidjourneyConfig {
+export interface BotConfig extends MJConfig {
   DavinciToken: string;
 }
-export interface BotConfigParam extends MidjourneyConfigParam {
+export interface BotConfigParam extends MJConfigParam {
   DavinciToken: string;
 }
 
 export const DefaultBotConfig: BotConfig = {
-  ...DefaultMidjourneyConfig,
+  ...DefaultMJConfig,
   DavinciToken: "",
 };

@@ -8,7 +8,7 @@ import {
   ChannelType,
   Message,
 } from "discord.js";
-import { Midjourney } from "midjourney";
+import { Midjourney, MidjourneyApi } from "midjourney";
 import { BotConfig, BotConfigParam, DefaultBotConfig } from "./interfaces";
 
 export class MidjourneyBot extends Midjourney {
@@ -25,18 +25,19 @@ export class MidjourneyBot extends Midjourney {
   public config: BotConfig;
 
   constructor(defaults: BotConfigParam) {
-    const { DavinciToken, SalaiToken, ChannelId, ServerId } = defaults;
-    super(defaults);
-    this.config = {
+    const config = {
       ...DefaultBotConfig,
       ...defaults,
     };
+    super(config);
+    this.config = config;
   }
 
   async start() {
     this.client.on("ready", this.onReady.bind(this));
     this.client.on("messageCreate", this.onMessage.bind(this));
     this.client.on("interactionCreate", this.onInteraction.bind(this));
+    await this.init();
     await this.client.login(this.config.DavinciToken);
     this.log("Bot started");
   }
@@ -54,7 +55,7 @@ export class MidjourneyBot extends Midjourney {
       return;
     }
     this.log("prompt", prompt);
-    const httpStatus = await this.ImagineApi(prompt);
+    const httpStatus = await this.MJApi.ImagineApi(prompt);
     if (httpStatus !== 204) {
       await interaction.reply("Request has failed; please try later");
     } else {
@@ -91,7 +92,11 @@ export class MidjourneyBot extends Midjourney {
     if (!msg) return;
     this.log(msg?.attachments.first()?.url);
     const messageHash = this.UriToHash(<string>msg.attachments.first()?.url);
-    const httpStatus = await this.UpscaleApi(index, messageID, messageHash);
+    const httpStatus = await this.MJApi.UpscaleApi(
+      index,
+      messageID,
+      messageHash
+    );
     if (httpStatus !== 204) {
       await (<TextChannel>(
         this.client.channels.cache.get(this.config.ChannelId)
@@ -108,7 +113,11 @@ export class MidjourneyBot extends Midjourney {
     if (!msg) return;
     this.log(msg?.attachments.first()?.url);
     const messageHash = this.UriToHash(<string>msg.attachments.first()?.url);
-    const httpStatus = await this.VariationApi(index, messageID, messageHash);
+    const httpStatus = await this.MJApi.VariationApi(
+      index,
+      messageID,
+      messageHash
+    );
     if (httpStatus !== 204) {
       await (<TextChannel>(
         this.client.channels.cache.get(this.config.ChannelId)

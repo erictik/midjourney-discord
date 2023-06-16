@@ -53,6 +53,11 @@
   resolved "https://registry.yarnpkg.com/@discordjs/util/-/util-0.2.0.tgz#91b590dae3934ffa5fe34530afc5212c569d6751"
   integrity sha512-/8qNbebFzLWKOOg+UV+RB8itp4SmU5jw0tBUD3ifElW6rYNOj1Ku5JaSW7lLl/WgjjxF01l/1uQPCzkwr110vg==
 
+"@huggingface/inference@^2.5.0":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@huggingface/inference/-/inference-2.5.1.tgz#13824db5823edf241be2acb8e548097c94b39187"
+  integrity sha512-5Jx+cwRYrGtvN/27VJbzEcjFlFR7ixd+jNC/hbjcRDSZ3QteEUVKwMCgXplwjWkQbvoeWik+reR2m5fAWUvvpw==
+
 "@jridgewell/resolve-uri@^3.0.3":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@jridgewell/resolve-uri/-/resolve-uri-3.1.1.tgz#c08679063f279615a3326583ba3a90d1d82cc721"
@@ -334,6 +339,11 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
+isomorphic-ws@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/isomorphic-ws/-/isomorphic-ws-5.0.0.tgz#e5529148912ecb9b451b46ed44d53dae1ce04bbf"
+  integrity sha512-muId7Zzn9ywDsyXgTIafTry2sV3nySZeUDe6YedVd1Hvuuep5AsIlqK+XefWpYTyJG5e503F2xIuT2lcU6rCSw==
+
 lodash.snakecase@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.snakecase/-/lodash.snakecase-4.1.1.tgz#39d714a35357147837aefd64b5dcbb16becd8f8d"
@@ -349,14 +359,25 @@ make-error@^1.1.1:
   resolved "https://registry.yarnpkg.com/make-error/-/make-error-1.3.6.tgz#2eb2e37ea9b67c4891f684a1394799af484cf7a2"
   integrity sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==
 
-midjourney@^2.1.30:
-  version "2.1.30"
-  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-2.1.30.tgz#087b8dd6e563ae02d580022297f0f495ca045aeb"
-  integrity sha512-l54MQDH0CjeeRPwbdfRzThgaVX3+G1A2FVJvBkpe18TMkBHW2Pnwx74HO3NnyKnu5nWbvs6oIWI78ptXDT5oGQ==
+midjourney@^2.7.78:
+  version "2.7.78"
+  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-2.7.78.tgz#ffbbff0f069141b446c986be25506193a8749ee7"
+  integrity sha512-2rPaUo4M2CtcZqs3J7HnctaQTmxb/s2bAcqrnT+/wKgT2USmwfQFn1QnZvYSl8e5sOZ6JmbCv8F+KwRun0bgDg==
   dependencies:
+    "@huggingface/inference" "^2.5.0"
+    isomorphic-ws "^5.0.0"
+    mime "^3.0.0"
     p-queue "^6.6.2"
+    snowyflake "^2.0.0"
     throat "^6.0.2"
     tslib "^2.5.0"
+    websocket-ts "^1.1.1"
+    ws "^8.13.0"
+
+mime@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-3.0.0.tgz#b374550dca3a0c18443b0c950a6a58f1931cf7a7"
+  integrity sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==
 
 minimatch@^3.1.2:
   version "3.1.2"
@@ -478,6 +499,11 @@ simple-update-notifier@^1.0.7:
   dependencies:
     semver "~7.0.0"
 
+snowyflake@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/snowyflake/-/snowyflake-2.0.0.tgz#9514fb3540b290b71fec8efb6a737d32c4dc8105"
+  integrity sha512-BxeqV0KJxJASu6EBJGUkX194Zhh37AEa0ow/JRK39icWbLTG9Wl/7LAL6a/ZMSjNm4O9pZk6QoLcWP7f/YKmtA==
+
 streamsearch@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/streamsearch/-/streamsearch-1.1.0.tgz#404dd1e2247ca94af554e841a8ef0eaa238da764"
@@ -587,6 +613,11 @@ v8-compile-cache-lib@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/v8-compile-cache-lib/-/v8-compile-cache-lib-3.0.1.tgz#6336e8d71965cb3d35a1bbb7868445a7c05264bf"
   integrity sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==
+
+websocket-ts@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/websocket-ts/-/websocket-ts-1.1.1.tgz#de482da5e0c714ebc58a43fe94157e5a855f2828"
+  integrity sha512-rm+S60J74Ckw5iizzgID12ju+OfaHAa6dhXhULIOrXkl0e05RzxfY42/vMStpz5jWL3iz9mkyjPcFUY1IgI0fw==
 
 ws@^8.13.0:
   version "8.13.0"
