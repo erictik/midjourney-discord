@@ -55,6 +55,7 @@ export class MidjourneyBot extends Midjourney {
       return;
     }
     this.log("prompt", prompt);
+    this.MJApi.config.ChannelId = interaction.channelId;
     const httpStatus = await this.MJApi.ImagineApi(prompt);
     if (httpStatus !== 204) {
       await interaction.reply("Request has failed; please try later");
@@ -87,45 +88,45 @@ export class MidjourneyBot extends Midjourney {
     return message;
   }
 
-  async upscale(index: number, messageID: string) {
-    const msg = await this.getMessage(this.config.ChannelId, messageID);
+  async upscale(index: number, channelId: string, messageID: string) {
+    const msg = await this.getMessage(channelId, messageID);
     if (!msg) return;
     this.log(msg?.attachments.first()?.url);
     const messageHash = this.UriToHash(<string>msg.attachments.first()?.url);
+    this.MJApi.config.ChannelId = channelId;
     const httpStatus = await this.MJApi.UpscaleApi(
       index,
       messageID,
       messageHash
     );
     if (httpStatus !== 204) {
-      await (<TextChannel>(
-        this.client.channels.cache.get(this.config.ChannelId)
-      )).send("Request has failed; please try later");
+      await (<TextChannel>this.client.channels.cache.get(channelId)).send(
+        "Request has failed; please try later"
+      );
     } else {
-      await (<TextChannel>(
-        this.client.channels.cache.get(this.config.ChannelId)
-      )).send("Your upscale image is being prepared, please wait a moment...");
+      await (<TextChannel>this.client.channels.cache.get(channelId)).send(
+        "Your upscale image is being prepared, please wait a moment..."
+      );
     }
   }
 
-  async variation(index: number, messageID: string) {
-    const msg = await this.getMessage(this.config.ChannelId, messageID);
+  async variation(index: number, channelId: string, messageID: string) {
+    const msg = await this.getMessage(channelId, messageID);
     if (!msg) return;
     this.log(msg?.attachments.first()?.url);
     const messageHash = this.UriToHash(<string>msg.attachments.first()?.url);
+    this.MJApi.config.ChannelId = channelId;
     const httpStatus = await this.MJApi.VariationApi(
       index,
       messageID,
       messageHash
     );
     if (httpStatus !== 204) {
-      await (<TextChannel>(
-        this.client.channels.cache.get(this.config.ChannelId)
-      )).send("Request has failed; please try later");
+      await (<TextChannel>this.client.channels.cache.get(channelId)).send(
+        "Request has failed; please try later"
+      );
     } else {
-      await (<TextChannel>(
-        this.client.channels.cache.get(this.config.ChannelId)
-      )).send(
+      await (<TextChannel>this.client.channels.cache.get(channelId)).send(
         "Your variations image is being prepared, please wait a moment..."
       );
     }
@@ -138,30 +139,31 @@ export class MidjourneyBot extends Midjourney {
     if (message.reference.messageId === undefined) return;
     if (message.mentions.repliedUser?.id !== "936929561302675456") return;
     const option = message.content;
+    const channelId = message.channelId;
     switch (option) {
       case "v1":
-        this.variation(1, message.reference.messageId);
+        this.variation(1, channelId, message.reference.messageId);
         break;
       case "v2":
-        this.variation(2, message.reference.messageId);
+        this.variation(2, channelId, message.reference.messageId);
         break;
       case "v3":
-        this.variation(3, message.reference.messageId);
+        this.variation(3, channelId, message.reference.messageId);
         break;
       case "v4":
-        this.variation(4, message.reference.messageId);
+        this.variation(4, channelId, message.reference.messageId);
         break;
       case "u1":
-        this.upscale(1, message.reference.messageId);
+        this.upscale(1, channelId, message.reference.messageId);
         break;
       case "u2":
-        this.upscale(2, message.reference.messageId);
+        this.upscale(2, channelId, message.reference.messageId);
         break;
       case "u3":
-        this.upscale(3, message.reference.messageId);
+        this.upscale(3, channelId, message.reference.messageId);
         break;
       case "u4":
-        this.upscale(4, message.reference.messageId);
+        this.upscale(4, channelId, message.reference.messageId);
         break;
     }
   }
