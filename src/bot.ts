@@ -88,17 +88,18 @@ export class MidjourneyBot extends Midjourney {
     return message;
   }
 
-  async upscale(index: number, channelId: string, messageID: string) {
+  async upscale(index: 1 | 2 | 3 | 4, channelId: string, messageID: string) {
     const msg = await this.getMessage(channelId, messageID);
     if (!msg) return;
     this.log(msg?.attachments.first()?.url);
     const messageHash = this.UriToHash(<string>msg.attachments.first()?.url);
     this.MJApi.config.ChannelId = channelId;
-    const httpStatus = await this.MJApi.UpscaleApi(
+    const httpStatus = await this.MJApi.UpscaleApi({
       index,
-      messageID,
-      messageHash
-    );
+      msgId: messageID,
+      hash: messageHash,
+      flags: 0
+    });
     if (httpStatus !== 204) {
       await (<TextChannel>this.client.channels.cache.get(channelId)).send(
         "Request has failed; please try later"
@@ -110,17 +111,18 @@ export class MidjourneyBot extends Midjourney {
     }
   }
 
-  async variation(index: number, channelId: string, messageID: string) {
+  async variation(index: 1 | 2 | 3 | 4, channelId: string, messageID: string) {
     const msg = await this.getMessage(channelId, messageID);
     if (!msg) return;
     this.log(msg?.attachments.first()?.url);
     const messageHash = this.UriToHash(<string>msg.attachments.first()?.url);
     this.MJApi.config.ChannelId = channelId;
-    const httpStatus = await this.MJApi.VariationApi(
+    const httpStatus = await this.MJApi.VariationApi({
       index,
-      messageID,
-      messageHash
-    );
+      msgId: messageID,
+      hash: messageHash,
+      flags: 0
+    });
     if (httpStatus !== 204) {
       await (<TextChannel>this.client.channels.cache.get(channelId)).send(
         "Request has failed; please try later"
